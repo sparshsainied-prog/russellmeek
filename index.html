@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Russell Meek | The Khalada Stone</title>
+<meta name="description" content="The Khalada Stone, an epic fantasy series in five books by New Zealand author and photographer Russell Meek. Whispers of a Red Dawn is the finale.">
+<meta property="og:title" content="A homepage for Russell Meek, made by Sparsh Saini">
+<meta property="og:description" content="A homepage idea for Russell Meek and The Khalada Stone, made by Sparsh Saini. Not the official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/russellmeek/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23251209'/><circle cx='16' cy='15' r='9' fill='%23e3522a'/><path d='M16 9c-2 0-3 2-3 4v1l-3 9h12l-3-9v-1c0-2-1-4-3-4Z' fill='%23251209'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* Colours from the Whispers of a Red Dawn cover: the dust haze, the red sun, the dark
+   cloak, and the engraved oxblood of the title lettering. */
+:root {
+  --cloak: #1d0e09;
+  --earth: #2e1810;
+  --haze: #8c5c40;
+  --sand: #d8b48f;
+  --sun: #e5532a;
+  --ember: #f2a25a;
+  --oxblood: #3b0f09;
+  --bone: #f1e3cf;
+  --bone-2: #cdb59b;
+  --display: "Cinzel", "Trajan Pro", Georgia, serif;
+  --text: "Crimson Pro", Georgia, serif;
+  --gutter: clamp(1rem, 5vw, 4rem);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--cloak); color: var(--bone); font-family: var(--text); font-size: 1.25rem; line-height: 1.55; overflow-x: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+.wrap { max-width: 72rem; margin: 0 auto; padding: 0 var(--gutter); }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; line-height: 1.05; }
+p { margin: 0 0 1rem; }
+:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
+/* Buttons in the cover's language: carved capitals, a sun-red plate, no rounding */
+.btn { display: inline-block; padding: .7rem 1.35rem .72rem; background: var(--sun); color: var(--cloak); font-family: var(--display); font-weight: 700; font-size: .98rem; letter-spacing: .08em; text-decoration: none; border: 1px solid #ff8a5c; box-shadow: 0 .5rem 1.4rem rgba(20, 6, 2, .45); }
+.btn:hover, .btn:focus-visible { background: var(--ember); }
+.quiet { font-style: italic; text-underline-offset: .25em; text-decoration-thickness: 1px; }
+.quiet:hover, .quiet:focus-visible { color: var(--ember); }
+.buy { display: flex; flex-wrap: wrap; gap: .9rem 1.5rem; align-items: center; }
+
+.top { position: absolute; z-index: 20; top: 0; left: 0; right: 0; }
+.made { margin: 0; padding: .45rem var(--gutter); background: #120705; color: var(--bone-2); font-size: 1rem; line-height: 1.35; text-align: center; }
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .8rem var(--gutter); }
+.mark { font-family: var(--display); font-weight: 700; font-size: 1.3rem; letter-spacing: .12em; text-decoration: none; color: var(--bone); text-shadow: 0 1px 10px rgba(29, 14, 9, .8); }
+.bar nav { display: flex; gap: 1.4rem; font-family: var(--display); font-size: .95rem; letter-spacing: .06em; }
+.bar nav a { text-decoration: none; color: var(--bone); text-shadow: 0 1px 10px rgba(29, 14, 9, .8); }
+.bar nav a:hover, .bar nav a:focus-visible { color: var(--ember); }
+
+/* Hero: the Whispers of a Red Dawn cover taken apart. Far haze, the sun, the title,
+   the walker, the near dust. Scroll and the red sun rises behind him while he walks out
+   of the haboob toward you. Every plane is the cover's own pixels; transform and opacity only. */
+.hero { position: relative; height: 100svh; min-height: 38rem; }
+.js .hero { height: 330svh; }
+.stage { position: sticky; top: 0; height: 100svh; min-height: 38rem; overflow: hidden; background: var(--haze); }
+.sky { position: absolute; inset: -4% 0 0; width: 100%; height: 104%; object-fit: cover; object-position: 50% 42%; will-change: transform; }
+.scene { position: absolute; left: 0; top: 0; }
+.sun, .walker { position: absolute; max-width: none; will-change: transform; }
+.sun { left: 16.04%; top: 23.14%; width: 69.06%; height: 45.13%; }
+.walker { left: 17.66%; top: 35.35%; width: 77.45%; height: 52.19%; transform-origin: 48.5% 92%; }
+.dust { position: absolute; left: -6%; width: 112%; bottom: -2%; height: auto; max-width: none; will-change: transform, opacity; pointer-events: none; }
+.dim { position: absolute; inset: 0; background: linear-gradient(rgba(29, 14, 9, .5), rgba(29, 14, 9, .15) 60%, rgba(29, 14, 9, .35)); will-change: opacity; pointer-events: none; }
+.title { position: absolute; left: 0; right: 0; text-align: center; color: var(--oxblood); will-change: transform, opacity; pointer-events: none; }
+.title h1 { font-weight: 600; font-size: clamp(3rem, 7.4vw, 7.2rem); line-height: .98; text-shadow: 0 1px 0 rgba(255, 190, 140, .35), 0 -1px 0 rgba(0, 0, 0, .35); }
+.title h1 span { display: block; }
+.title .sub { margin-top: .5rem; font-family: var(--display); font-size: clamp(.9rem, 1.2vw, 1.15rem); letter-spacing: .06em; }
+.whisper { position: absolute; left: var(--gutter); right: var(--gutter); text-align: center; margin: 0; font-style: italic; font-size: clamp(1.3rem, 2vw, 1.7rem); color: var(--bone); text-shadow: 0 1px 14px rgba(29, 14, 9, .95); will-change: transform, opacity; }
+.whisper.w1 { bottom: 9svh; }
+.whisper.w2 { bottom: 9svh; opacity: 0; max-width: 36rem; margin: 0 auto; }
+.close { position: absolute; left: var(--gutter); bottom: 6svh; max-width: 25rem; opacity: 0; will-change: transform, opacity; }
+.close p { color: var(--bone); text-shadow: 0 1px 12px rgba(29, 14, 9, .95); font-size: 1.2rem; }
+html:not(.js) .whisper, html:not(.js) .dim { display: none; }
+html:not(.js) .close { opacity: 1; }
+
+/* Calm sections */
+.band { padding: clamp(4.5rem, 10vw, 8rem) 0; }
+h2 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); margin-bottom: 1.4rem; color: var(--sand); text-wrap: balance; }
+.book { background: var(--earth); }
+.book .grid { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
+.book .cover-s { box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .55); position: sticky; top: 2rem; }
+.blurb { max-width: 38rem; }
+.blurb .kicker { font-family: var(--display); color: var(--ember); font-size: 1rem; letter-spacing: .08em; margin-bottom: .8rem; }
+.blurb .pull { font-family: var(--display); font-size: clamp(1.35rem, 2.3vw, 1.75rem); line-height: 1.3; color: var(--sand); margin: 1.6rem 0; }
+.where { list-style: none; padding: 0; margin: 1.6rem 0 0; border-top: 1px solid rgba(216, 180, 143, .3); }
+.where li { border-bottom: 1px solid rgba(216, 180, 143, .3); }
+.where a { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .95rem 0; text-decoration: none; font-weight: 600; }
+.where a span { color: var(--bone-2); font-weight: 400; font-style: italic; text-align: right; }
+.where a:hover, .where a:focus-visible { color: var(--ember); }
+
+.series { background: var(--cloak); }
+.lineup { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.1rem; margin: 2.6rem 0 1.8rem; padding: 0; list-style: none; }
+.lineup img { width: 100%; aspect-ratio: 286 / 446; object-fit: cover; box-shadow: 0 1rem 2rem rgba(0, 0, 0, .5); }
+.lineup b { display: block; font-family: var(--display); font-weight: 600; font-size: .98rem; line-height: 1.2; margin-top: .8rem; color: var(--sand); }
+.lineup span { display: block; font-size: 1rem; color: var(--bone-2); }
+.series .lead-in { max-width: 40rem; font-size: clamp(1.3rem, 2vw, 1.5rem); line-height: 1.4; }
+
+.road { background: var(--sun); color: var(--cloak); }
+.road h2 { color: var(--cloak); }
+.road .grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.road .lead-in { font-size: clamp(1.3rem, 2vw, 1.55rem); line-height: 1.4; }
+.dates { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--cloak); }
+.dates li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 1rem; padding: .7rem 0; border-bottom: 1px solid rgba(29, 14, 9, .3); }
+.dates time { font-family: var(--display); font-weight: 700; font-size: 1rem; padding-top: .2rem; }
+.dates b { font-family: var(--display); font-weight: 700; letter-spacing: .04em; }
+
+.charlie { background: #141a2b; }
+.charlie .grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+.charlie h2 { color: #f0d9a8; }
+.charlie img { box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .6); max-width: 22rem; }
+.charlie .btn { background: #f0d9a8; border-color: #fff1c9; }
+
+.about { background: var(--earth); }
+.about .grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.about .lead-in { font-family: var(--display); font-size: clamp(1.4rem, 2.4vw, 1.9rem); line-height: 1.3; color: var(--sand); }
+
+footer { padding: 2.2rem 0 2.6rem; background: #120705; color: var(--bone-2); font-size: 1.02rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: .8rem 2rem; justify-content: space-between; }
+footer p { margin: 0; }
+
+@media (max-width: 760px) {
+  body { font-size: 1.15rem; }
+  .mark { font-size: 1.05rem; letter-spacing: .08em; }
+  .bar nav { gap: .9rem; font-size: .85rem; }
+  .bar nav .wide { display: none; }
+  .title { z-index: 3; }
+  .title h1 { font-size: 2.9rem; }
+  .whisper { font-size: 1.2rem; }
+  .close { right: var(--gutter); max-width: none; text-align: center; }
+  .close .buy { justify-content: center; }
+  .book .grid, .road .grid, .charlie .grid, .about .grid { grid-template-columns: minmax(0, 1fr); }
+  .book .cover-s { position: static; max-width: 15rem; }
+  .lineup { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem .9rem; }
+  .lineup b { font-size: .85rem; }
+  .dates li { grid-template-columns: 7.6rem minmax(0, 1fr); }
+  .charlie img { max-width: 14rem; order: -1; }
+}
+</style>
+</head>
+<body>
+<div class="top">
+  <p class="made">A homepage idea made by Sparsh Saini for Russell Meek. Not their official site.</p>
+  <div class="bar">
+    <a class="mark" href="#">Russell Meek</a>
+    <nav aria-label="Main">
+      <a href="#book">The finale</a>
+      <a class="wide" href="#series">The series</a>
+      <a href="#road">Find me</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+<section class="hero" aria-label="Whispers of a Red Dawn">
+  <div class="stage">
+    <picture>
+      <source media="(max-width: 760px)" srcset="img/sky-m.jpg">
+      <img class="sky" src="img/sky.jpg" alt="" width="1280" height="1959">
+    </picture>
+    <div class="dim"></div>
+    <div class="scene">
+      <img class="sun" src="img/sun.webp" alt="" width="704" height="704">
+    </div>
+    <div class="title">
+      <h1><span>Whispers</span> <span>of a Red</span> <span>Dawn</span></h1>
+      <p class="sub">Book five of The Khalada Stone series</p>
+    </div>
+    <div class="scene front">
+      <img class="walker" src="img/walker.webp" alt="A hooded, masked figure in a dark cloak walks out of a dust storm in front of a red sun" width="1487" height="1534" fetchpriority="high">
+    </div>
+    <img class="dust" src="img/dust.webp" alt="" width="1280" height="593">
+    <p class="whisper w1">Whispers still drift across the wind.</p>
+    <p class="whisper w2" aria-hidden="true">…like a great haboob devouring the light of dawn’s blood.</p>
+    <div class="close">
+      <p>The epic finale to The Khalada Stone. Out now in paperback and on Kindle.</p>
+      <div class="buy">
+        <a class="btn" href="https://www.thekhaladastone.com/purchase">Order a copy</a>
+        <a class="quiet" href="#series">Start with book one</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band book" id="book">
+  <div class="wrap grid">
+    <img class="cover-s" src="img/whispers.jpg" alt="Whispers of a Red Dawn by Russell Meek, book five of The Khalada Stone series" width="520" height="796" loading="lazy">
+    <div class="blurb">
+      <p class="kicker">Book five. The finale.</p>
+      <h2>Whispers of a Red Dawn</h2>
+      <p>Ohrl has found Na’ilah’s ship. On an island consumed by the Dead, the final stone is within his grasp. Yet whispers still drift across the wind, his growing madness threatening to claim his mind. Certain that Na’ilah is still alive, Ohrl must find a way to control the Dead before it’s too late, but within the island, few of the Living are left to consume.</p>
+      <p>Marooned with Elsa, Mihja, Terttu and Loviisa, Na’ilah begins her hunt for the last stone. Desperate to reach Izz al-Din’s tomb alone, she is mocked by the priest for her failure, for the Dead are too many and too strong.</p>
+      <p class="pull">If the Dead rise, if Ohrl or Na’ilah return, it is a war the Living cannot survive.</p>
+      <p>Whispers of a Red Dawn concludes the struggles of two brothers in their quest against the rightful heir to the mind of al-Din.</p>
+      <ul class="where">
+        <li><a href="https://www.thekhaladastone.com/purchase">Paperback <span>NZ$44.95, from me</span></a></li>
+        <li><a href="https://www.amazon.com/dp/B0GPST1YW8">Kindle <span>Amazon</span></a></li>
+        <li><a href="https://www.thekhaladastone.com/pod-worldwide">Print on demand <span>order from your bookshop</span></a></li>
+        <li><a href="https://www.goodreads.com/book/show/248955297-whispers-of-a-red-dawn">Goodreads <span>put it on the shelf</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band series" id="series">
+  <div class="wrap">
+    <h2>The Khalada Stone, start to finish</h2>
+    <p class="lead-in">Six harmonic stones hold the mind of al-Din. Two brothers, five books, and a thousand years of treacherous priests.</p>
+    <ol class="lineup">
+      <li><img src="img/madness.jpg" alt="The Madness of Hallen cover" width="286" height="446" loading="lazy"><b>The Madness of Hallen</b><span>Book one</span></li>
+      <li><img src="img/brothers-bond.jpg" alt="A Brother’s Bond cover" width="286" height="446" loading="lazy"><b>A Brother’s Bond</b><span>Book two</span></li>
+      <li><img src="img/adhr-1.jpg" alt="A Dark Heart Rises: I cover" width="286" height="446" loading="lazy"><b>A Dark Heart Rises: I</b><span>Book three, part one</span></li>
+      <li><img src="img/adhr-2.jpg" alt="A Dark Heart Rises: II cover" width="286" height="446" loading="lazy"><b>A Dark Heart Rises: II</b><span>Book three, part two</span></li>
+      <li><img src="img/slave.jpg" alt="The Slave of Ashqa’at cover" width="400" height="612" loading="lazy"><b>The Slave of Ashqa’at</b><span>Book four</span></li>
+      <li><img src="img/whispers.jpg" alt="Whispers of a Red Dawn cover" width="520" height="796" loading="lazy"><b>Whispers of a Red Dawn</b><span>Book five</span></li>
+    </ol>
+    <div class="buy">
+      <a class="btn" href="https://www.thekhaladastone.com/purchase">The complete set</a>
+      <a class="quiet" href="https://www.amazon.com/dp/0473387913">Book one on Amazon</a>
+      <a class="quiet" href="https://www.thekhaladastone.com/moh-prologue">Read the prologue free</a>
+    </div>
+  </div>
+</section>
+
+<section class="band road" id="road">
+  <div class="wrap grid">
+    <div>
+      <h2>Come and find me</h2>
+      <p class="lead-in">I take the whole series on the road around New Zealand, with A3 concept art prints and I’m a Khalada Stoner t-shirts. This year so far:</p>
+    </div>
+    <ul class="dates">
+      <li><time>21 to 22 Mar</time><span><b>Armageddon</b>, Christchurch</span></li>
+      <li><time>3 to 5 Apr</time><span><b>Armageddon</b>, Wellington</span></li>
+      <li><time>25 to 27 Apr</time><span><b>Armageddon</b>, Auckland</span></li>
+      <li><time>2 May</time><span><b>Ages of Pages</b>, Hamilton</span></li>
+      <li><time>27 Jun</time><span><b>A Winter’s Day Out</b>, Palmerston North</span></li>
+      <li><time>11 to 12 Jul</time><span><b>Winter Christmas Market</b>, Hamilton</span></li>
+      <li><time>1 to 2 Aug</time><span><b>Armageddon</b>, Palmerston North</span></li>
+      <li><time>23 to 26 Oct</time><span><b>Armageddon</b>, Auckland</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band charlie" id="charlie">
+  <div class="wrap grid">
+    <div>
+      <h2>Remember Charlie Willows</h2>
+      <p>Something different from me: a novel of the Second World War, set in a village beyond the outskirts of Paris. A nurse, a young Māori pilot, and a daughter called Charlie, the beacon that will light her father’s way home.</p>
+      <p>Hope is a kind of magic, and everyone has one chance to become someone’s hero.</p>
+      <div class="buy">
+        <a class="btn" href="https://www.thekhaladastone.com/purchase">First edition hardback</a>
+        <a class="quiet" href="https://www.thekhaladastone.com/rcw">Read the first five chapters</a>
+      </div>
+    </div>
+    <img src="img/charlie.jpg" alt="Remember Charlie Willows cover: a girl in a blue coat watching fireworks over a city" width="400" height="654" loading="lazy">
+  </div>
+</section>
+
+<section class="band about" id="about">
+  <div class="wrap grid">
+    <div>
+      <h2>Russell Meek</h2>
+      <p class="lead-in">Author, photographer, traveller.</p>
+    </div>
+    <div>
+      <p>It was the windswept deserts and ancient routes of the Middle East that set me on this journey. At 23, a photographer, I hitch-hiked across Syria, drove the King’s Highway through Jordan and stood at Petra as dawn rose.</p>
+      <p>That year took me from the Sahara to the Guatemalan jungles, and across the Atlantic. It never left me, and in 2007 it began seeping into the pages of The Khalada Stone.</p>
+      <p>After eight years in the UK photographing Europe and the Caribbean, I came home to New Zealand, where I live by the beach. I still travel for work and for the books: I shot the cover of A Brother’s Bond in China and A Dark Heart Rises: I in Southern Spain.</p>
+      <ul class="where">
+        <li><a href="https://www.instagram.com/russell.meek/">Instagram <span>@russell.meek</span></a></li>
+        <li><a href="https://www.thekhaladastone.com/map">The map <span>of the known lands</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>A mockup made by Sparsh Saini for Russell Meek. Not affiliated, not live. The covers and words are the author’s.</p>
+    <p><a class="quiet" href="#">Back to top</a></p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const hero = document.querySelector('.hero'), stage = hero.querySelector('.stage');
+  const scenes = [...hero.querySelectorAll('.scene')], sky = hero.querySelector('.sky');
+  const sun = hero.querySelector('.sun'), walker = hero.querySelector('.walker'), dust = hero.querySelector('.dust');
+  const title = hero.querySelector('.title'), dim = hero.querySelector('.dim');
+  const w1 = hero.querySelector('.w1'), w2 = hero.querySelector('.w2'), close = hero.querySelector('.close');
+  const CW = 1920, CH = 2939;
+  const clamp = v => Math.min(1, Math.max(0, v));
+  const ease = t => t * t * (3 - 2 * t);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let L = null;
+  // Place the cover-sized scene once per resize. Phones get a cover-fit crop centred on the
+  // walker; wide screens fit the cover's height and let the far haze fill the sides.
+  const layout = () => {
+    const w = stage.clientWidth, h = stage.clientHeight, phone = w <= 760;
+    const s = phone ? Math.max(w / CW, h / CH) * 1.04 : Math.max(h * 1.42 / CH, w * .42 / CW);
+    const left = phone ? w / 2 - 1060 * s : (w - CW * s) / 2, top = h - 2470 * s;
+    scenes.forEach(el => { el.style.width = CW * s + 'px'; el.style.height = CH * s + 'px'; el.style.left = left + 'px'; el.style.top = top + 'px'; });
+    // the title sits where the cover put it: above the sun's crown
+    title.style.top = Math.max(phone ? 92 : 70, top + 150 * s) + 'px';
+    L = { h, s, phone };
+  };
+  const render = p => {
+    if (!L) layout();
+    const { h, phone } = L;
+    const rise = ease(clamp((p - .02) / .62));      // the sun climbs to its place on the cover
+    const walk = ease(clamp((p - .1) / .7));        // he walks toward us
+    sun.style.transform = `translateY(${((1 - rise) * 38).toFixed(2)}%)`;
+    sky.style.transform = `translateY(${(-rise * 3).toFixed(2)}%)`;
+    const k = .8 + .3 * walk;
+    walker.style.transform = `translateY(${((1 - walk) * -2 + walk * 4).toFixed(2)}%) scale(${k.toFixed(4)})`;
+    // the near dust: we pass through it, it drops and thins
+    dust.style.transform = `translate(${(-walk * 4).toFixed(2)}%,${(walk * 22).toFixed(2)}%) scale(${(1 + walk * .18).toFixed(4)})`;
+    dust.style.opacity = (1 - walk * .45).toFixed(3);
+    dim.style.opacity = (1 - rise).toFixed(3);
+    // the title stays put, the walker's hood comes up into it on wide screens
+    title.style.transform = `translateY(${(-walk * (phone ? .02 : .03) * h).toFixed(1)}px)`;
+    const a1 = ease(clamp((p - .12) / .1)); w1.style.opacity = (1 - a1).toFixed(3);
+    w1.style.transform = `translateY(${(-a1 * 1.2).toFixed(2)}rem)`;
+    const b = ease(clamp((p - .3) / .12)) * (1 - ease(clamp((p - .6) / .1)));
+    w2.style.opacity = b.toFixed(3); w2.style.transform = `translateY(${((1 - b) * 1).toFixed(2)}rem)`;
+    const c = ease(clamp((p - .74) / .18));
+    close.style.opacity = c.toFixed(3); close.style.transform = `translateY(${((1 - c) * 1.2).toFixed(2)}rem)`;
+  };
+  if (reduced) {
+    document.documentElement.classList.remove('js');
+    const end = () => { L = null; render(1); };
+    end(); addEventListener('resize', end);
+    return;
+  }
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const run = hero.offsetHeight - innerHeight;
+    render(run > 0 ? clamp(-hero.getBoundingClientRect().top / run) : 1);
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener('resize', () => { L = null; update(); });
+  update();
+})();
+</script>
+</body>
+</html>
